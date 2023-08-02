@@ -23,9 +23,8 @@ addTextView("How many times to run firedragon13")
 addEditNumber("firedragon13RunTIme", 1)
 dialogShow("firedragon13RunTIme")
 endNember = firedragon13RunTIme
-wait(1)
+
 goFireDragon13()
-wait(1)
 
 if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)

@@ -16,7 +16,6 @@ addTextView("How many times to run this advanture")
 addEditNumber("advantureRunTIme", 1)
 dialogShow("advantureRunTIme")
 endNember = advantureRunTIme
-wait(1)
 
 if exists(Pattern("readyToFight.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)

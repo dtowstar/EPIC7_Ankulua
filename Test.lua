@@ -4,7 +4,6 @@ Settings:setScriptDimension(true, 1600)
 Settings:set("MinSimilarity", 0.85)
 
 -- ==========  main program ===========
-wait(1)
 
 function goFireDragon13()
     if exists(Pattern("firedragon13.png"):similar(0.75), 5) then

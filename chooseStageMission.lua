@@ -43,8 +43,6 @@ dialogShow("任務選單")
 -- print ("firedragon13RunTIme = "..endNember)
 -- print ("stageMission = "..stageMission)
 
-wait(1)
-
 endNember = StageMissionRunTime
 
 if exists(Pattern("readyToFight.png"):similar(0.85), 5) then

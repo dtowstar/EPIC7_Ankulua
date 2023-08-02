@@ -42,11 +42,10 @@ addRadioGroup("crusadeMission", 5)
 addRadioButton("火龍", 5)
 addRadioButton("木石", 10)
 addRadioButton("水妖", 15)
-dialogShow("CrusadeRunTIme")
+
 endNember = crusadeRunTIme
-wait(1)
+
 chooseCrusade()
-wait(1)
 
 if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)
