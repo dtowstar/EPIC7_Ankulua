@@ -14,7 +14,7 @@ lose = 0
 dialogInit()
 addTextView("How many times to run this advanture")
 addEditNumber("advantureRunTIme", 1)
-dialogShow("advantureRunTIme")
+dialogShow("冒險選單")
 endNember = advantureRunTIme
 
 if exists(Pattern("readyToFight.png"):similar(0.85), 5) then

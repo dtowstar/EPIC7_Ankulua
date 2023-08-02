@@ -42,6 +42,7 @@ addRadioGroup("crusadeMission", 5)
 addRadioButton("火龍", 5)
 addRadioButton("木石", 10)
 addRadioButton("水妖", 15)
+dialogShow("討罰選單")
 
 endNember = crusadeRunTIme
 
