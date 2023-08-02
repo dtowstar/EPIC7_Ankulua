@@ -4,12 +4,11 @@ Settings:setScriptDimension(true, 1600)
 Settings:set("MinSimilarity", 0.85)
 
 -- ==========  main program ===========
---existsClick("button_ok.png", 1)
 wait(1)
 
 function goFireDragon13()
     if exists(Pattern("firedragon13.png"):similar(0.75), 5) then
-        longClick(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
+        click(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
         getLastMatch():highlight(1)
         toast("firedragon13")
     end
@@ -25,7 +24,9 @@ function clickMissionStage()
     end
 end
 
+-- existsClick("button_ok.png", 1)
 -- doubleClick()
+-- longClick()
 -- dialogInit()
 -- addTextView("How many times to run this mission")
 -- addEditNumber("StageMissionRunTime", 1)
@@ -41,6 +42,6 @@ end
 if exists(Pattern("fightingTop.png"):similar(0.75), 2) then
     getLastMatch():highlight(1)
     toast("break")
-
 end
+
 print("noon")

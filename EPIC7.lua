@@ -8,7 +8,7 @@ Settings:set("MinSimilarity", 0.85)
 function goFireDragon13()
     if exists(Pattern("firedragon13.png"):similar(0.75), 5) then
         getLastMatch():highlight(1)
-        longClick(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
+        click(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
         toast("firedragon13")
     end
 end
@@ -29,7 +29,7 @@ wait(1)
 
 if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)
-    longClick("chooseTeam.png",1)
+    click("chooseTeam.png",1)
     toast("chooseTeam")
 end
 
@@ -44,12 +44,12 @@ while stratNember < endNember do
 
         elseif exists(Pattern("buy.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            longClick("buy.png",1)
+            click("buy.png",1)
             toast("buyEnergy")
 
         elseif exists(Pattern("startFight.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            longClick(Pattern("startFight.png"):similar(0.85),1)
+            click(Pattern("startFight.png"):similar(0.85),1)
             toast("startFight")
 
         end
@@ -62,7 +62,7 @@ while stratNember < endNember do
 
         if exists(Pattern("stageClear.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
-            longClick("stageClear.png",1)
+            click("stageClear.png",1)
             toast("stageClear")
             stratNember = stratNember+1
             win = win+1
@@ -72,7 +72,7 @@ while stratNember < endNember do
 
         if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
-            longClick("stageFailed.png",1)
+            click("stageFailed.png",1)
             toast("stageFailed")
             lose = lose+1
             break
