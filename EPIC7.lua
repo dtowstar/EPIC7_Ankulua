@@ -5,94 +5,144 @@ Settings:set("MinSimilarity", 0.85)
 
 -- ==========  main program ===========
 
-function goFireDragon13()
-    if exists(Pattern("firedragon13.png"):similar(0.75), 5) then
-        getLastMatch():highlight(1)
-        click(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
-        toast("firedragon13")
+function clickMissionStage()
+    if stageMission == 5 then
+        if exists(Pattern("middleLevel.png"):similar(0.95), 2) then
+            getLastMatch():highlight(1)
+            click("middleLevel.png",1)
+            toast("middleLevel")
+        end
+    elseif stageMission == 10 then
+        if exists(Pattern("hightLevel.png"):similar(0.95), 2) then
+            getLastMatch():highlight(1)
+            click("hightLevel.png",1)
+            toast("hightLevel")
+        end
+    elseif stageMission == 15 then
+        if exists(Pattern("hellLevel.png"):similar(0.95), 2) then
+            getLastMatch():highlight(1)
+            click("hellLevel.png",1)
+            toast("hellLevel")
+        end
     end
 end
 
 stratNember = 0
-endNember = 0
 win = 0
 lose = 0
 
 dialogInit()
-addTextView("How many times to run firedragon13")
-addEditNumber("firedragon13RunTIme", 1)
-dialogShow("firedragon13RunTIme")
-endNember = firedragon13RunTIme
+addTextView("How many times to run this mission")
+addEditNumber("StageMissionRunTime", 1)
+newRow()
+addRadioGroup("stageMission", 15)
+addRadioButton("中級", 5)
+addRadioButton("高級", 10)
+addRadioButton("地獄級", 15)
+dialogShow("任務選單")
+-- print ("firedragon13RunTIme = "..endNember)
+-- print ("stageMission = "..stageMission)
 
-goFireDragon13()
+endNember = StageMissionRunTime
 
-if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
+if exists(Pattern("readyToFight.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)
-    click("chooseTeam.png",1)
-    toast("chooseTeam")
+    click("readyToFight.png",1)
+    toast("readyToFight")
 end
 
 wait(3)
 
+clickMissionStage()
+
 while stratNember < endNember do
+    
+    while true do
+
+        if exists(Pattern("startFight.png"):similar(0.85), 2) then
+            break
+        end
+
+        if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
+            getLastMatch():highlight(1)
+            click("chooseSupportHero.png",1)
+            toast("chooseSupportHero")
+        end
+    
+        if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
+            getLastMatch():highlight(1)
+            click("chooseTeamNoShowEnergy.png",1)
+            toast("chooseTeamNoShowEnergy")
+        end
+    
+    end
 
     while true do
 
-        if exists(Pattern("dragon13Fighting.png"):similar(0.85), 2) then
+        if exists(Pattern("skillOn.png"):similar(0.85), 3) then
             break
-
-        elseif exists(Pattern("buy.png"):similar(0.85), 2) then
+        end
+    
+        if exists(Pattern("startFight.png"):similar(0.85), 2) then
+            getLastMatch():highlight(1)
+            click("startFight.png",1)
+            toast("startFight")
+        end
+    
+        if exists(Pattern("buy.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("buy.png",1)
             toast("buyEnergy")
-
-        elseif exists(Pattern("startFight.png"):similar(0.85), 2) then
-            getLastMatch():highlight(1)
-            click(Pattern("startFight.png"):similar(0.85),1)
-            toast("startFight")
-
         end
 
     end
 
-    wait(150)
+    wait(30)
 
     while true do
 
-        if exists(Pattern("stageClear.png"):similar(0.75), 2) then
+        if exists(Pattern("stageClear.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("stageClear.png",1)
             toast("stageClear")
             stratNember = stratNember+1
             win = win+1
-            toast(win)
             break
         end
 
-        if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
+        if exists(Pattern("stageFailed.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("stageFailed.png",1)
             toast("stageFailed")
             lose = lose+1
             break
         end
+
     end
 
     while true do
 
-        if exists(Pattern("wantedConfirmAndGo.png"):similar(0.75), 3) then
+        if exists(Pattern("cancelAndApply.png"):similar(0.75), 1) then
             getLastMatch():highlight(1)
-            click(Pattern("wantedConfirmAndGo.png"):targetOffset(-100,0),1)
-            toast("wantedConfirmAndGo")
+            click(Pattern("cancelAndApply.png"):targetOffset(100,0))
+            toast("cancelAndApply")
         end
-    
-        if exists(Pattern("battleEndConfirm.png"):similar(0.85), 5) then
+
+        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 1) then
             getLastMatch():highlight(1)
-            click("battleEndConfirm.png",1)
+            click("battleEndConfirm.png")
             toast("battleEndConfirm")
         end
-    
-        if exists(Pattern("reStart.png"):similar(0.85), 5) then
+
+        wait(2)
+
+        if exists(Pattern("certainAndGo.png"):similar(0.75), 1) then
+            getLastMatch():highlight(1)
+            click(Pattern("certainAndGo.png"):targetOffset(-100,0))
+            toast("certainAndGo")
+        end    
+
+        if exists(Pattern("reStart.png"):similar(0.85), 1) then
             getLastMatch():highlight(1)
             click("reStart.png")
             toast("reStart")

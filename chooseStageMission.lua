@@ -59,7 +59,7 @@ while stratNember < endNember do
     
     while true do
 
-        if exists(Pattern("skillOn.png"):similar(0.85), 3) then
+        if exists(Pattern("startFight.png"):similar(0.85), 2) then
             break
         end
 
@@ -75,6 +75,14 @@ while stratNember < endNember do
             toast("chooseTeamNoShowEnergy")
         end
     
+    end
+
+    while true do
+
+        if exists(Pattern("skillOn.png"):similar(0.85), 3) then
+            break
+        end
+    
         if exists(Pattern("startFight.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("startFight.png",1)
@@ -87,11 +95,6 @@ while stratNember < endNember do
             toast("buyEnergy")
         end
 
-        if exists(Pattern("startFight.png"):similar(0.85), 2) then
-            getLastMatch():highlight(1)
-            click("startFight.png",1)
-            toast("startFight")
-        end
     end
 
     wait(30)
