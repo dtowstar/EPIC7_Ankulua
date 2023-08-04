@@ -7,19 +7,19 @@ Settings:set("MinSimilarity", 0.85)
 
 function clickMissionStage()
     if stageMission == 5 then
-        if exists(Pattern("middleLevel.png"):similar(0.95), 2) then
+        if exists(Pattern("middleLevel.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("middleLevel.png")
             toast("middleLevel")
         end
     elseif stageMission == 10 then
-        if exists(Pattern("hightLevel.png"):similar(0.95), 2) then
+        if exists(Pattern("hightLevel.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("hightLevel.png")
             toast("hightLevel")
         end
     elseif stageMission == 15 then
-        if exists(Pattern("hellLevel.png"):similar(0.95), 2) then
+        if exists(Pattern("hellLevel.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click("hellLevel.png")
             toast("hellLevel")
@@ -128,7 +128,7 @@ while stratNember < endNember do
             toast("cancelAndApply")
         end
 
-        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 1) then
+        if exists(Pattern("battleEndConfirm.png"):similar(0.85), 1) then
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
             toast("battleEndConfirm")
@@ -136,7 +136,7 @@ while stratNember < endNember do
 
         wait(2)
 
-        if exists(Pattern("certainAndGo.png"):similar(0.75), 1) then
+        if exists(Pattern("certainAndGo.png"):similar(0.85), 1) then
             getLastMatch():highlight(1)
             click(Pattern("certainAndGo.png"):targetOffset(-100,0))
             toast("certainAndGo")
