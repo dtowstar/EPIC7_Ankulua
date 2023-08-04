@@ -70,6 +70,7 @@ while stratNember < endNember do
     wait(20)
 
     while true do
+        
         if exists(Pattern("stageClear.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click("stageClear.png",1)
