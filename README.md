@@ -4,3 +4,5 @@
    Magisk安裝網址：https://github.com/topjohnwu/Magisk
 4. 必須要有一點基礎的程式語言基礎才能寫出腳本，要不只能自己到Ankulua尋找免費腳本<br>
    Ankulua官網：https://ankulua-tw.boards.net/thread/2/ankulua
+
+youtube範例影片：https://youtu.be/W9NA3MUI3t0
