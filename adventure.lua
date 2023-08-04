@@ -19,7 +19,7 @@ endNember = advantureRunTIme
 
 if exists(Pattern("readyToFight.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)
-    click("readyToFight.png",1)
+    click("readyToFight.png")
     toast("readyToFight")
 end
 
@@ -35,13 +35,13 @@ while stratNember < endNember do
 
         if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            click("chooseSupportHero.png",1)
+            click("chooseSupportHero.png")
             toast("chooseSupportHero")
         end
     
         if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            click("chooseTeamNoShowEnergy.png",1)
+            click("chooseTeamNoShowEnergy.png")
             toast("chooseTeamNoShowEnergy")
         end
     
@@ -55,13 +55,13 @@ while stratNember < endNember do
     
         if exists(Pattern("startFight.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            click("startFight.png",1)
+            click("startFight.png")
             toast("startFight")
         end
     
         if exists(Pattern("buy.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
-            click("buy.png",1)
+            click("buy.png")
             toast("buyEnergy")
         end
 
@@ -73,7 +73,7 @@ while stratNember < endNember do
         
         if exists(Pattern("stageClear.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
-            click("stageClear.png",1)
+            click("stageClear.png")
             toast("stageClear")
             stratNember = stratNember+1
             win = win+1
@@ -83,7 +83,7 @@ while stratNember < endNember do
 
         if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
-            click("stageFailed.png",1)
+            click("stageFailed.png")
             toast("stageFailed")
             lose = lose+1
             break
