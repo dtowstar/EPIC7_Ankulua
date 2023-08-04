@@ -36,15 +36,13 @@ lose = 0
 
 dialogInit()
 addTextView("How many times to run Crusade")
-addEditNumber("crusadeRunTIme", 1)
+addEditNumber("crusadeRunTIme", 10)
 newRow()
 addRadioGroup("crusadeMission", 5)
 addRadioButton("火龍", 5)
 addRadioButton("木石", 10)
 addRadioButton("水妖", 15)
 dialogShow("討罰選單")
-
-endNember = crusadeRunTIme
 
 chooseCrusade()
 
@@ -54,6 +52,8 @@ if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     toast("chooseTeam")
 end
 
+endNember = crusadeRunTIme
+
 wait(2)
 
 while stratNember < endNember do
@@ -62,23 +62,23 @@ while stratNember < endNember do
 
         if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
             break
+        end
 
-
-        elseif exists(Pattern("goFight.png"):similar(0.75), 3) then
+        if exists(Pattern("startFight.png"):similar(0.75), 3) then
             getLastMatch():highlight(1)
-            click("goFight.png")
-            toast("goFight")
+            click("startFight.png")
+            toast("startFight")
+        end
 
-        elseif exists(Pattern("buy.png"):similar(0.75), 3) then
+        if exists(Pattern("buy.png"):similar(0.75), 3) then
             getLastMatch():highlight(1)
             click("buy.png")
             toast("buyEnergy")
-
         end
 
     end
 
-    wait(150)
+    wait(130)
 
     while true do
 
@@ -122,6 +122,7 @@ while stratNember < endNember do
         end
     end
     toast("winNumber = "..win)
+    wait(2)
 end
 
 print ("win = "..win)
