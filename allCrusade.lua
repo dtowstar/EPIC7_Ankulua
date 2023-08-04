@@ -10,19 +10,19 @@ function chooseCrusade()
     if crusadeMission == 5 then
         if exists(Pattern("firedragon13.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
-            click(Pattern("firedragon13.png"):targetOffset(-150,10 ),1)
+            click(Pattern("firedragon13.png"):targetOffset(-150,10 ))
             toast("firedragon13")
         end
     elseif crusadeMission == 10 then
         if exists(Pattern("woodGolem13.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
-            click(Pattern("woodGolem13.png"):targetOffset(-150,10 ),1)
+            click(Pattern("woodGolem13.png"):targetOffset(-150,10 ))
             toast("woodGolem13")
         end
     elseif crusadeMission == 15 then
         if exists(Pattern("waterWitch13.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
-            click(Pattern("waterWitch13.png"):targetOffset(-150,10 ),1)
+            click(Pattern("waterWitch13.png"):targetOffset(-150,10 ))
             toast("waterWitch13")
         end
     end
@@ -104,7 +104,7 @@ while stratNember < endNember do
 
         if exists(Pattern("wantedConfirmAndGo.png"):similar(0.75), 3) then
             getLastMatch():highlight(1)
-            click(Pattern("wantedConfirmAndGo.png"):targetOffset(-100,0),1)
+            click(Pattern("wantedConfirmAndGo.png"):targetOffset(-100,0))
             toast("wantedConfirmAndGo")
         end
     
