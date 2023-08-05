@@ -106,7 +106,7 @@ while stratNember < endNember do
 
         wait(2)
 
-        if exists(Pattern("certainAndGo.png"):similar(0.85), 1) then
+        if exists(Pattern("certainAndGo.png"):similar(0.85), 2) then
             getLastMatch():highlight(1)
             click(Pattern("certainAndGo.png"):targetOffset(-100,0))
             toast("certainAndGo")
