@@ -38,12 +38,7 @@ end
 -- print ("firedragon13RunTIme = "..StageMissionRunTime)
 -- clickMissionStage()
 
-if exists(Pattern("goFight.png"):similar(0.75), 3) then
-    getLastMatch():highlight(1)
-end
 
-if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
-    toast("NgoFight")
-end
+existsClick(Pattern("manageTeam.png"):targetOffset(-30,90),5)
 
 print("noon")
