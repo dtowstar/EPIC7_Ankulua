@@ -99,7 +99,7 @@ while stratNember < endNember do
             getLastMatch():highlight(1)
             click(Pattern("backageFullness.png"):targetOffset(-200,0))
             existsClick(Pattern("manageTeam.png"):targetOffset(-30,90),5)
-            toast("backageFullness")
+            print("backageFullness")
             print ("win = "..win)
         end
 
