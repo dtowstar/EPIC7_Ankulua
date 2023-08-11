@@ -70,7 +70,7 @@ while stratNember < endNember do
             toast("startFight")
         end
 
-        if exists(Pattern("buy.png"):similar(0.75), 3) then
+        if exists(Pattern("buy.png"):similar(0.95), 3) then
             getLastMatch():highlight(1)
             click("buy.png")
             toast("buyEnergy")
