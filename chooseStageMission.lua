@@ -109,7 +109,7 @@ while stratNember < endNember do
 
     while true do
 
-        if exists(Pattern("stageClear.png"):similar(0.85), 2) then
+        if exists(Pattern("stageClear.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click("stageClear.png")
             toast("stageClear")
@@ -118,7 +118,7 @@ while stratNember < endNember do
             break
         end
 
-        if exists(Pattern("stageFailed.png"):similar(0.85), 2) then
+        if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click("stageFailed.png")
             toast("stageFailed")

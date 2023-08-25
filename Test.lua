@@ -39,6 +39,8 @@ end
 -- clickMissionStage()
 
 
-existsClick(Pattern("manageTeam.png"):targetOffset(-30,90),5)
+if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
+    getLastMatch():highlight(1)
+    toast("stageFailed")
 
-print("noon")
+end
