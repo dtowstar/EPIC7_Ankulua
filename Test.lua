@@ -42,5 +42,4 @@ end
 if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
     getLastMatch():highlight(1)
     toast("stageFailed")
-
 end
