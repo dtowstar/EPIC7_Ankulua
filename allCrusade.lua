@@ -116,7 +116,7 @@ while stratNember < endNember do
             toast("wantedConfirmAndGo")
         end
     
-        if exists(Pattern("battleEndConfirm.png"):similar(0.85), 5) then
+        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
             toast("battleEndConfirm")

@@ -1,7 +1,7 @@
 -- ========== Settings ================
 Settings:setCompareDimension(true, 1600)
 Settings:setScriptDimension(true, 1600)
-Settings:set("MinSimilarity", 0.85)
+Settings:set("MinSimilarity", 0.75)
 
 -- ==========  main program ===========
 
