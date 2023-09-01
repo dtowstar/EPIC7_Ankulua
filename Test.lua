@@ -39,7 +39,11 @@ end
 -- clickMissionStage()
 
 
-if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
+if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
     getLastMatch():highlight(1)
-    toast("stageFailed")
+    click(Pattern("backageFullness.png"):targetOffset(-200,0))
+    existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
+    getLastMatch():highlight(1)
+    print("backageFullness")
+    print ("win = "..win)
 end
