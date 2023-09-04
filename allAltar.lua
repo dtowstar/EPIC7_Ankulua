@@ -5,46 +5,15 @@ Settings:set("MinSimilarity", 0.75)
 
 -- ==========  main program ===========
 
-function chooseCrusade()
-
-    if crusadeMission == 5 then
-        if exists(Pattern("firedragon13.png"):similar(0.75), 5) then
-            getLastMatch():highlight(1)
-            click(Pattern("firedragon13.png"):targetOffset(-150,10 ))
-            toast("firedragon13")
-        end
-    elseif crusadeMission == 10 then
-        if exists(Pattern("woodGolem13.png"):similar(0.75), 5) then
-            getLastMatch():highlight(1)
-            click(Pattern("woodGolem13.png"):targetOffset(-150,10 ))
-            toast("woodGolem13")
-        end
-    elseif crusadeMission == 15 then
-        if exists(Pattern("waterWitch13.png"):similar(0.75), 5) then
-            getLastMatch():highlight(1)
-            click(Pattern("waterWitch13.png"):targetOffset(-150,10 ))
-            toast("waterWitch13")
-        end
-    end
-
-end
-
 stratNember = 0
 endNember = 0
 win = 0
 lose = 0
 
 dialogInit()
-addTextView("How many times to run Altat")
-addEditNumber("crusadeRunTIme", 10)
-newRow()
-addRadioGroup("crusadeMission", 5)
-addRadioButton("火龍", 5)
-addRadioButton("木石", 10)
-addRadioButton("水妖", 15)
-dialogShow("討罰選單")
-
-chooseCrusade()
+addTextView("How many times to run Altar")
+addEditNumber("AltarRunTIme", 10)
+dialogShow("祭壇選單")
 
 if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     getLastMatch():highlight(1)
@@ -52,7 +21,7 @@ if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
     toast("chooseTeam")
 end
 
-endNember = crusadeRunTIme
+endNember = AltarRunTIme
 
 wait(2)
 
@@ -86,7 +55,7 @@ while stratNember < endNember do
 
     end
 
-    wait(130)
+    wait(30)
 
     while true do
 
@@ -109,12 +78,6 @@ while stratNember < endNember do
     end
 
     while true do
-
-        if exists(Pattern("wantedConfirmAndGo.png"):similar(0.75), 3) then
-            getLastMatch():highlight(1)
-            click(Pattern("wantedConfirmAndGo.png"):targetOffset(-100,0))
-            toast("wantedConfirmAndGo")
-        end
     
         if exists(Pattern("battleEndConfirm.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
