@@ -59,29 +59,35 @@ wait(2)
 while stratNember < endNember do
 
     while true do
+        
+        toast("start")
 
-        if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
-            break
-        end
-
-        if exists(Pattern("startFight.png"):similar(0.75), 3) then
+        if exists(Pattern("startFight.png"):similar(0.70), 3) then
+            toast("click startFight")
             getLastMatch():highlight(1)
             click("startFight.png")
             toast("startFight")
         end
 
         if exists(Pattern("buy.png"):similar(0.95), 3) then
+            toast("click buy")
             getLastMatch():highlight(1)
             click("buy.png")
             toast("buyEnergy")
         end
 
         if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+            toast("click backageFullness")
             getLastMatch():highlight(1)
             click(Pattern("backageFullness.png"):targetOffset(-200,0))
             existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
             print("backageFullness")
             print ("win = "..win)
+        end
+
+        if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
+            toast("break")
+            break
         end
 
     end

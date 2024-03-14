@@ -39,11 +39,8 @@ end
 -- clickMissionStage()
 
 
-if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+if exists(Pattern("startFight.png"):similar(0.70), 3) then
     getLastMatch():highlight(1)
-    click(Pattern("backageFullness.png"):targetOffset(-200,0))
-    existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
-    getLastMatch():highlight(1)
-    print("backageFullness")
-    print ("win = "..win)
+    click("startFight.png")
+    toast("startFight")
 end
