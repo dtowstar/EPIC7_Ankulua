@@ -33,6 +33,7 @@ end
 stratNember = 0
 win = 0
 lose = 0
+HaveChooseSupportHero = 0
 
 dialogInit()
 addTextView("How many times to run this mission")
@@ -66,6 +67,20 @@ while stratNember < endNember do
         if exists(Pattern("startFight.png"):similar(0.85), 2) then
             break
         end
+
+        if HaveChooseSupportHero == 0 then
+
+            if exists(Pattern("chooseFriendHero.png"):similar(0.75), 3) then
+                getLastMatch():highlight(1)
+                click(Pattern("chooseFriendHero.png"):targetOffset(0,250))
+                wait(1)
+                click(Pattern("chooseFriendHero.png"):targetOffset(0,150))
+                toast("chooseFriendHero")
+                HaveChooseSupportHero = 1
+            end
+        
+        end
+
 
         if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
             toast("chooseSupportHero")

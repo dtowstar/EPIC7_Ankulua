@@ -38,9 +38,17 @@ end
 -- print ("firedragon13RunTIme = "..StageMissionRunTime)
 -- clickMissionStage()
 
+HaveChooseSupportHero = 0
 
-if exists(Pattern("startFight.png"):similar(0.70), 3) then
-    getLastMatch():highlight(1)
-    click("startFight.png")
-    toast("startFight")
+if HaveChooseSupportHero == 0 then
+
+    if exists(Pattern("chooseFriendHero.png"):similar(0.75), 1) then
+        getLastMatch():highlight(1)
+        click(Pattern("chooseFriendHero.png"):targetOffset(0,250))
+        wait(1)
+        click(Pattern("chooseFriendHero.png"):targetOffset(0,150))
+        toast("chooseFriendHero")
+        HaveChooseSupportHero = 1
+    end
+
 end

@@ -10,6 +10,7 @@ stratNember = 0
 endNember = 0
 win = 0
 lose = 0
+HaveChooseSupportHero = 0
 
 dialogInit()
 addTextView("How many times to run this advanture")
@@ -35,13 +36,29 @@ while stratNember < endNember do
             break
         end
 
+        if HaveChooseSupportHero == 0 then
+
+            if exists(Pattern("chooseFriendHero.png"):similar(0.75), 3) then
+                getLastMatch():highlight(1)
+                click(Pattern("chooseFriendHero.png"):targetOffset(0,250))
+                wait(1)
+                click(Pattern("chooseFriendHero.png"):targetOffset(0,150))
+                toast("chooseFriendHero")
+                HaveChooseSupportHero = 1
+            end
+        
+        end
+
+
+
+
         if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
             toast("chooseSupportHero")
             getLastMatch():highlight(1)
             click("chooseSupportHero.png")
             
         end
-    
+
         if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
             toast("chooseTeamNoShowEnergy")
             getLastMatch():highlight(1)
