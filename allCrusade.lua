@@ -67,14 +67,12 @@ while stratNember < endNember do
             toast("click startFight")
             getLastMatch():highlight(1)
             click("startFight.png")
-            toast("startFight")
         end
 
         if exists(Pattern("buy.png"):similar(0.95), 3) then
             toast("click buy")
             getLastMatch():highlight(1)
             click("buy.png")
-            toast("buyEnergy")
         end
 
         if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
@@ -82,7 +80,6 @@ while stratNember < endNember do
             getLastMatch():highlight(1)
             click(Pattern("backageFullness.png"):targetOffset(-200,0))
             existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
-            print("backageFullness")
             print ("win = "..win)
         end
 

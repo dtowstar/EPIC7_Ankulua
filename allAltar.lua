@@ -99,7 +99,7 @@ while stratNember < endNember do
         end
     end
     toast("winNumber = "..win)
-    wait(2)
+
 end
 
 print ("win = "..win)
