@@ -30,22 +30,26 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
+            toast("break")
             break
         end
 
         if exists(Pattern("startFight.png"):similar(0.75), 3) then
+            toast("startFight")
             getLastMatch():highlight(1)
             click("startFight.png")
-            toast("startFight")
+            
         end
 
         if exists(Pattern("buy.png"):similar(0.95), 3) then
+            toast("buyEnergy")
             getLastMatch():highlight(1)
             click("buy.png")
-            toast("buyEnergy")
+            
         end
 
         if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+            toast("backageFullness")
             getLastMatch():highlight(1)
             click(Pattern("backageFullness.png"):targetOffset(-200,0))
             existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
@@ -60,18 +64,18 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("stageClear.png"):similar(0.75), 2) then
+            toast("stageClear")
             getLastMatch():highlight(1)
             click("stageClear.png")
-            toast("stageClear")
             stratNember = stratNember+1
             win = win+1
             break
         end
 
         if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
+            toast("stageFailed")
             getLastMatch():highlight(1)
             click("stageFailed.png")
-            toast("stageFailed")
             lose = lose+1
             break
         end
@@ -80,15 +84,17 @@ while stratNember < endNember do
     while true do
     
         if exists(Pattern("battleEndConfirm.png"):similar(0.75), 5) then
+            toast("battleEndConfirm")
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
-            toast("battleEndConfirm")
+            
         end
     
         if exists(Pattern("reStart.png"):similar(0.75), 5) then
+            toast("reStart")
             getLastMatch():highlight(1)
             click("reStart.png")
-            toast("reStart")
+            
             break
         end
     end

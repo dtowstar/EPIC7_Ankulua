@@ -47,9 +47,10 @@ dialogShow("討罰選單")
 chooseCrusade()
 
 if exists(Pattern("chooseTeam.png"):similar(0.85), 5) then
+    toast("chooseTeam")
     getLastMatch():highlight(1)
     click("chooseTeam.png")
-    toast("chooseTeam")
+    
 end
 
 endNember = crusadeRunTIme
@@ -97,18 +98,18 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("stageClear.png"):similar(0.75), 2) then
+            toast("stageClear")
             getLastMatch():highlight(1)
             click("stageClear.png")
-            toast("stageClear")
             stratNember = stratNember+1
             win = win+1
             break
         end
 
         if exists(Pattern("stageFailed.png"):similar(0.75), 2) then
+            toast("stageFailed")
             getLastMatch():highlight(1)
             click("stageFailed.png")
-            toast("stageFailed")
             lose = lose+1
             break
         end
@@ -117,21 +118,24 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("wantedConfirmAndGo.png"):similar(0.75), 3) then
+            toast("wantedConfirmAndGo")
             getLastMatch():highlight(1)
             click(Pattern("wantedConfirmAndGo.png"):targetOffset(-100,0))
-            toast("wantedConfirmAndGo")
+            
         end
     
         if exists(Pattern("battleEndConfirm.png"):similar(0.75), 5) then
+            toast("battleEndConfirm")
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
-            toast("battleEndConfirm")
+            
         end
     
         if exists(Pattern("reStart.png"):similar(0.75), 5) then
+            toast("reStart")
             getLastMatch():highlight(1)
             click("reStart.png")
-            toast("reStart")
+            
             break
         end
     end

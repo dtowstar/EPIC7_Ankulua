@@ -8,21 +8,24 @@ Settings:set("MinSimilarity", 0.75)
 function clickMissionStage()
     if stageMission == 5 then
         if exists(Pattern("middleLevel.png"):similar(0.85), 2) then
+            toast("middleLevel")
             getLastMatch():highlight(1)
             click("middleLevel.png")
-            toast("middleLevel")
+            
         end
     elseif stageMission == 10 then
         if exists(Pattern("hightLevel.png"):similar(0.85), 2) then
+            toast("hightLevel")
             getLastMatch():highlight(1)
             click("hightLevel.png")
-            toast("hightLevel")
+            
         end
     elseif stageMission == 15 then
         if exists(Pattern("hellLevel.png"):similar(0.85), 2) then
+            toast("hellLevel")
             getLastMatch():highlight(1)
             click("hellLevel.png")
-            toast("hellLevel")
+            
         end
     end
 end
@@ -46,9 +49,10 @@ dialogShow("任務選單")
 endNember = StageMissionRunTime
 
 if exists(Pattern("readyToFight.png"):similar(0.85), 5) then
+    toast("readyToFight")
     getLastMatch():highlight(1)
     click("readyToFight.png")
-    toast("readyToFight")
+    
 end
 
 wait(3)
@@ -64,15 +68,17 @@ while stratNember < endNember do
         end
 
         if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
+            toast("chooseSupportHero")
             getLastMatch():highlight(1)
             click("chooseSupportHero.png")
-            toast("chooseSupportHero")
+            
         end
     
         if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
+            toast("chooseTeamNoShowEnergy")
             getLastMatch():highlight(1)
             click("chooseTeamNoShowEnergy.png")
-            toast("chooseTeamNoShowEnergy")
+            
         end
     
     end
@@ -80,22 +86,26 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("skillOn.png"):similar(0.75), 3) then
+            toast("break")
             break
         end
     
         if exists(Pattern("startFight.png"):similar(0.75), 2) then
+            toast("startFight")
             getLastMatch():highlight(1)
             click("startFight.png")
-            toast("startFight")
+            
         end
 
         if exists(Pattern("buy.png"):similar(0.95), 2) then
+            toast("buyEnergy")
             getLastMatch():highlight(1)
             click("buy.png")
-            toast("buyEnergy")
+            
         end
 
         if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+            toast("backageFullness")
             getLastMatch():highlight(1)
             click(Pattern("backageFullness.png"):targetOffset(-200,0))
             existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
