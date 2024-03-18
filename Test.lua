@@ -23,6 +23,40 @@ function clickMissionStage()
     end
 end
 
+function sellBackage()
+    while true do 
+        getLastMatch():highlight(1)
+        click(Pattern("backageFullness.png"):targetOffset(0,0))
+
+        if exists(Pattern("partOfBackage.png"):similar(0.75), 5) then
+            getLastMatch():highlight(1)
+            click(Pattern("partOfBackage.png"):targetOffset(100,50))
+            if exists(Pattern("autochoose.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("autochoose.png"):targetOffset(0,50))
+            end
+            wait(2)
+            if exists(Pattern("autochoose.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("autochoose.png"):targetOffset(-50,-50))
+            end
+            if exists(Pattern("sell.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("sell.png"):targetOffset(50,0))
+            end
+            if exists(Pattern("sellConfirm.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("sellConfirm.png"):targetOffset(100,0))
+            end
+            if exists(Pattern("partOfBackage.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("partOfBackage.png"):targetOffset(250,50))
+                break
+            end
+        end
+    end
+end
+
 -- existsClick("button_ok.png", 1)
 -- doubleClick()
 -- longClick()
@@ -38,17 +72,10 @@ end
 -- print ("firedragon13RunTIme = "..StageMissionRunTime)
 -- clickMissionStage()
 
-HaveChooseSupportHero = 0
+--existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
 
-if HaveChooseSupportHero == 0 then
-
-    if exists(Pattern("chooseFriendHero.png"):similar(0.75), 1) then
-        getLastMatch():highlight(1)
-        click(Pattern("chooseFriendHero.png"):targetOffset(0,250))
-        wait(1)
-        click(Pattern("chooseFriendHero.png"):targetOffset(0,150))
-        toast("chooseFriendHero")
-        HaveChooseSupportHero = 1
-    end
-
+if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+    sellBackage()
 end
+
+

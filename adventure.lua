@@ -6,7 +6,39 @@ Settings:setScriptDimension(true, 1600)
 Settings:set("MinSimilarity", 0.75)
 
 -- ==========  main program ===========
-wait(1)
+function sellBackage()
+    while true do 
+        getLastMatch():highlight(1)
+        click(Pattern("backageFullness.png"):targetOffset(0,0))
+
+        if exists(Pattern("partOfBackage.png"):similar(0.75), 5) then
+            getLastMatch():highlight(1)
+            click(Pattern("partOfBackage.png"):targetOffset(100,50))
+            if exists(Pattern("autochoose.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("autochoose.png"):targetOffset(0,50))
+            end
+            wait(2)
+            if exists(Pattern("autochoose.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("autochoose.png"):targetOffset(-50,-50))
+            end
+            if exists(Pattern("sell.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("sell.png"):targetOffset(50,0))
+            end
+            if exists(Pattern("sellConfirm.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("sellConfirm.png"):targetOffset(100,0))
+            end
+            if exists(Pattern("partOfBackage.png"):similar(0.75), 5) then
+                getLastMatch():highlight(1)
+                click(Pattern("partOfBackage.png"):targetOffset(250,50))
+                break
+            end
+        end
+    end
+end
 
 stratNember = 0
 endNember = 0
@@ -51,9 +83,6 @@ while stratNember < endNember do
         
         end
 
-
-
-
         if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
             toast("chooseSupportHero")
             getLastMatch():highlight(1)
@@ -92,11 +121,7 @@ while stratNember < endNember do
         end
 
         if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
-            getLastMatch():highlight(1)
-            click(Pattern("backageFullness.png"):targetOffset(-200,0))
-            existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
-            print("backageFullness")
-            print ("win = "..win)
+            sellBackage()
         end
 
     end
