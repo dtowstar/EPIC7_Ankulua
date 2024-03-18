@@ -1,5 +1,7 @@
 -- ========== Settings ================
+--解析度多少
 Settings:setCompareDimension(true, 1600)
+--解析度自動縮放
 Settings:setScriptDimension(true, 1600)
 Settings:set("MinSimilarity", 0.75)
 
