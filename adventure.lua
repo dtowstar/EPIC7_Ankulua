@@ -72,7 +72,7 @@ while stratNember < endNember do
 
         if HaveChooseSupportHero == 0 then
 
-            if exists(Pattern("chooseFriendHero.png"):similar(0.75), 3) then
+            if exists(Pattern("chooseFriendHero.png"):similar(0.75), 5) then
                 getLastMatch():highlight(1)
                 click(Pattern("chooseFriendHero.png"):targetOffset(0,250))
                 wait(1)
@@ -83,14 +83,14 @@ while stratNember < endNember do
         
         end
 
-        if exists(Pattern("chooseSupportHero.png"):similar(0.85), 2) then
+        if exists(Pattern("chooseSupportHero.png"):similar(0.85), 3) then
             toast("chooseSupportHero")
             getLastMatch():highlight(1)
             click("chooseSupportHero.png")
             
         end
 
-        if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
+        if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 3) then
             toast("chooseTeamNoShowEnergy")
             getLastMatch():highlight(1)
             click("chooseTeamNoShowEnergy.png")
@@ -106,21 +106,21 @@ while stratNember < endNember do
             break
         end
     
-        if exists(Pattern("startFight.png"):similar(0.85), 2) then
+        if exists(Pattern("startFight.png"):similar(0.85), 3) then
             toast("startFight")
             getLastMatch():highlight(1)
             click("startFight.png")
             
         end
     
-        if exists(Pattern("buy.png"):similar(0.95), 2) then
+        if exists(Pattern("buy.png"):similar(0.95), 3) then
             toast("buyEnergy")
             getLastMatch():highlight(1)
             click("buy.png")
             
         end
 
-        if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+        if exists(Pattern("backageFullness.png"):similar(0.85), 3) then
             sellBackage()
         end
 
@@ -151,14 +151,14 @@ while stratNember < endNember do
 
     while true do
 
-        if exists(Pattern("cancelAndApply.png"):similar(0.75), 1) then
+        if exists(Pattern("cancelAndApply.png"):similar(0.75), 2) then
             toast("cancelAndApply")
             getLastMatch():highlight(1)
             click(Pattern("cancelAndApply.png"):targetOffset(100,0))
             
         end
 
-        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 1) then
+        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 2) then
             toast("battleEndConfirm")
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
@@ -174,7 +174,7 @@ while stratNember < endNember do
             
         end    
 
-        if exists(Pattern("reStart.png"):similar(0.75), 1) then
+        if exists(Pattern("reStart.png"):similar(0.75), 2) then
             toast("reStart")
             getLastMatch():highlight(1)
             click("reStart.png")

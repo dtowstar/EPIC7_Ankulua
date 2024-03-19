@@ -184,13 +184,13 @@ while stratNember < endNember do
 
     while true do
 
-        if exists(Pattern("cancelAndApply.png"):similar(0.75), 1) then
+        if exists(Pattern("cancelAndApply.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click(Pattern("cancelAndApply.png"):targetOffset(100,0))
             toast("cancelAndApply")
         end
 
-        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 1) then
+        if exists(Pattern("battleEndConfirm.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click("battleEndConfirm.png")
             toast("battleEndConfirm")
@@ -204,7 +204,7 @@ while stratNember < endNember do
             toast("certainAndGo")
         end    
 
-        if exists(Pattern("reStart.png"):similar(0.75), 1) then
+        if exists(Pattern("reStart.png"):similar(0.75), 2) then
             getLastMatch():highlight(1)
             click("reStart.png")
             toast("reStart")

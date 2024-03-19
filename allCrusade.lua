@@ -109,7 +109,7 @@ while stratNember < endNember do
             click("buy.png")
         end
 
-        if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
+        if exists(Pattern("backageFullness.png"):similar(0.85), 3) then
             sellBackage()
         end
 
