@@ -30,7 +30,6 @@ while stratNember < endNember do
     while true do
 
         if exists(Pattern("fightingTop.png"):similar(0.85), 2) then
-            toast("break")
             break
         end
 

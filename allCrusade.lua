@@ -9,6 +9,11 @@ function sellBackage()
         getLastMatch():highlight(1)
         click(Pattern("backageFullness.png"):targetOffset(0,0))
 
+        if exists(Pattern("topLeftOfBackage.png"):similar(0.85), 5) then
+            getLastMatch():highlight(1)
+            click(Pattern("topLeftOfBackage.png"):targetOffset(0,50))
+        end
+
         if exists(Pattern("partOfBackage.png"):similar(0.75), 5) then
             getLastMatch():highlight(1)
             click(Pattern("partOfBackage.png"):targetOffset(100,50))
@@ -114,7 +119,6 @@ while stratNember < endNember do
         end
 
         if exists(Pattern("fightingTop.png"):similar(0.85), 3) then
-            toast("break")
             break
         end
 
