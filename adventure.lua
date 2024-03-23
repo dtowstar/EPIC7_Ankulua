@@ -70,7 +70,7 @@ while stratNember < endNember do
 
     while true do
 
-        if exists(Pattern("startFight.png"):similar(0.85), 2) then
+        if exists(Pattern("startFight.png"):similar(0.75), 2) then
             break
         end
 
@@ -87,7 +87,7 @@ while stratNember < endNember do
         
         end
 
-        if exists(Pattern("chooseSupportHero.png"):similar(0.85), 3) then
+        if exists(Pattern("chooseSupportHero.png"):similar(0.75), 3) then
             toast("chooseSupportHero")
             getLastMatch():highlight(1)
             click("chooseSupportHero.png")
@@ -97,6 +97,7 @@ while stratNember < endNember do
         if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 3) then
             toast("chooseTeamNoShowEnergy")
             getLastMatch():highlight(1)
+            wait(1)
             click("chooseTeamNoShowEnergy.png")
             
         end
