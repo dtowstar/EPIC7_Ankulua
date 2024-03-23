@@ -131,6 +131,7 @@ while stratNember < endNember do
         if exists(Pattern("chooseTeamNoShowEnergy.png"):similar(0.85), 2) then
             toast("chooseTeamNoShowEnergy")
             getLastMatch():highlight(1)
+            wait(1)
             click("chooseTeamNoShowEnergy.png")
             
         end
