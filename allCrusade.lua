@@ -124,7 +124,7 @@ while stratNember < endNember do
 
     end
 
-    wait(130)
+    wait(100)
 
     while true do
 
