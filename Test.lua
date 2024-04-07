@@ -79,8 +79,10 @@ end
 
 --existsClick(Pattern("manageTeam.png"):targetOffset(-30,100),5)
 
-if exists(Pattern("backageFullness.png"):similar(0.85), 2) then
-    sellBackage()
+if exists(Pattern("startFight.png"):similar(0.65), 3) then
+    toast("startFight")
+    getLastMatch():highlight(1)
+    
 end
 
 
