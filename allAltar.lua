@@ -28,10 +28,6 @@ wait(2)
 while stratNember < endNember do
 
     while true do
-        
-        if exists(Pattern("fightingTop.png"):similar(0.85), 2) then
-            break
-        end
 
         if exists(Pattern("startFight.png"):similar(0.65), 3) then
             toast("startFight")
@@ -55,6 +51,12 @@ while stratNember < endNember do
             print("backageFullness")
             print ("win = "..win)
         end
+
+        if exists(Pattern("fightingTop.png"):similar(0.85), 2) then
+            toast("fightingTop")
+            break
+        end
+
     end
 
     wait(30)
